@@ -14,16 +14,16 @@ switch (Console.ReadLine())
             list.Add(t);
         }
 
-        using (var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i1\list.txt"))
+        using (var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i1\list.txt"))
             sw.Write(JsonSerializer.Serialize(list));
         break;
     case "rw":
         try
         {
-            using (var sr = new StreamReader(@"C:\Users\User\Desktop\Prog\1\i1\list.txt"))
+            using (var sr = new StreamReader(@"C:\Users\User\Desktop\Prog\1\i\i1\list.txt"))
                 list = JsonSerializer.Deserialize<List<string>>(sr.ReadToEnd());
             list?.Reverse();
-            using (var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i1\list.txt"))
+            using (var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i1\list.txt"))
                 sw.Write(JsonSerializer.Serialize(list));
         }
         catch
