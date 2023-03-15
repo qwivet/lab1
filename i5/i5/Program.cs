@@ -12,3 +12,7 @@ nintendoSwitch.DisplayCost();
 laptop.MakeVideo();
 iPhone.MakeVideo();
 googlePixel7.MakeVideo();
+googlePixel7.MakeCall();
+iPhone.MakeCall();
+laptop.PlayGames();
+pc.PlayGames();

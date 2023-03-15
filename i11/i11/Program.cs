@@ -7,5 +7,5 @@ foreach (var i in d2)
         d1[i.Key] += i.Value;
     else
         d1.Add(i.Key, i.Value);
-using (var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i11\dict.txt"))
-    sw.Write(JsonSerializer.Serialize(d1));
+using var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i11\dict.json");
+sw.Write(JsonSerializer.Serialize(d1));

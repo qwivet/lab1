@@ -1,4 +1,12 @@
 ﻿using System.Text.Json;
 
-string[] numbers = {"-5", "6", "-3", "7", "-2", "0", "-8", "4"};
-Console.Write(JsonSerializer.Serialize(numbers.Where(n => Convert.ToInt32(n) < 0 && Convert.ToInt32(n) % 2 == 0).Reverse()));
+var numbers = new List<int>();
+Console.WriteLine("Enter integers (for exit print 'e'):");
+while (true)
+{
+    var t = Console.ReadLine();
+    if (t == "e") break;
+    if (!int.TryParse(t, out _)) throw new Exception("It isn't integer");
+    numbers.Add(Convert.ToInt32(t));
+}
+Console.Write(JsonSerializer.Serialize(numbers.Where(n => n < 0 && n % 2 == 0).Reverse()));

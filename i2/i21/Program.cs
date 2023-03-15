@@ -3,12 +3,12 @@
 var fr1 = new Fraction(6, 10);
 Console.WriteLine(fr1.Simplify());
 var fr2 = new Fraction(4, 5);
-Console.WriteLine(fr1+fr2);
-Console.WriteLine(fr1-fr2);
-Console.WriteLine(fr1*fr2);
-Console.WriteLine(fr1/fr2);
-Console.WriteLine(fr1.Equals(fr2));
-Console.WriteLine(fr1.IsProper());
+Console.WriteLine("6/10 + 4/5 = " + (fr1 + fr2));
+Console.WriteLine("6/10 - 4/5 = " + (fr1 - fr2));
+Console.WriteLine("6/10 * 4/5 = " + (fr1 * fr2));
+Console.WriteLine("6/10 / 4/5 = " + (fr1 / fr2));
+Console.WriteLine("6/10 == 4/5? - " + (fr1.Equals(fr2)));
+Console.WriteLine("6/10 is proper? -" + (fr1.IsProper()));
 //fr1.Serialize();
 Console.WriteLine(Fraction.Deserialize());
 class Fraction
@@ -80,13 +80,13 @@ class Fraction
     }
     public void Serialize()
     {
-        using var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i21\data.txt");
+        using var sw = File.CreateText(@"C:\Users\User\Desktop\Prog\1\i\i2\data.json");
         sw.Write(JsonSerializer.Serialize(this));
     }
 
     public static Fraction? Deserialize()
     {
-        using var sr = new StreamReader(@"C:\Users\User\Desktop\Prog\1\i\i21\data.txt");
+        using var sr = new StreamReader(@"C:\Users\User\Desktop\Prog\1\i\i2\data.json");
         return JsonSerializer.Deserialize<Fraction>(sr.ReadToEnd());
     }
 }
